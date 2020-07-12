@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <br><br>
+   <center> <h1>Enter Youtube Video Link Here</h1> </center>
+
+    <form action="download/" method="get">
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control" id="link" name="url" aria-describedby="emailHelp" placeholder="Enter Your Selected Youtube Video Link">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <br>
+        
+        <center>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </center>
+    </form>
+
+
+</div>
+{% endblock body %}

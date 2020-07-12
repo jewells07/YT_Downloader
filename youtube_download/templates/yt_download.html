@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <br><br>
+    <center> <h2> Your Video </h2> </center>
+    <br>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{embd}}" allowfullscreen></iframe>
+    </div>
+
+
+    <br><br>
+
+    <table class="table">
+    <thead class="thead-light">
+        <tr>
+        <th scope="col">Select resolution</th>
+        <th scope="col">Download</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in rsl %}
+        <tr>
+        <td>{{i}}</td>
+        <td>
+            <form action="{% url 'download_complete' i %}" method="post" class="post-form"> {% csrf_token %}
+            <input type="submit" class="btn btn-success" value="Download">
+            </form>
+        </td>
+        </tr>
+    {% endfor %}
+       
+    </tbody>
+    </table>
+
+
+</div>
+{% endblock body %}
